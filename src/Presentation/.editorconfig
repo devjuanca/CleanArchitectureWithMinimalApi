@@ -1,0 +1,25 @@
+﻿[*.cs]
+
+# CS8604: Posible argumento de referencia nulo
+dotnet_diagnostic.CS8604.severity = silent
+
+# CS8602: Desreferencia de una referencia posiblemente NULL.
+dotnet_diagnostic.CS8602.severity = silent
+
+# CS8600: Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
+dotnet_diagnostic.CS8600.severity = silent
+
+# CS8618: Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
+dotnet_diagnostic.CS8618.severity = silent
+
+# CS8603: Posible tipo de valor devuelto de referencia nulo
+dotnet_diagnostic.CS8603.severity = silent
+
+# CS8619: La nulabilidad de los tipos de referencia del valor no coincide con el tipo de destino
+dotnet_diagnostic.CS8619.severity = silent
+
+# CS8714: El tipo no se puede usar como parámetro de tipo en el método o tipo genérico. La nulabilidad del argumento de tipo no coincide con la restricción "notnull"
+dotnet_diagnostic.CS8714.severity = silent
+
+# CS8601: Posible asignación de referencia nula
+dotnet_diagnostic.CS8601.severity = silent
