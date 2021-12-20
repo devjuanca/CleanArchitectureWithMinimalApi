@@ -17,7 +17,7 @@ export class Client {
         this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
     }
 
-    addProduct(addProductCommand: AddProductCommand | undefined): Promise<Unit> {
+    postApiAddProduct(addProductCommand: AddProductCommand | undefined): Promise<Unit> {
         let url_ = this.baseUrl + "/api/addProduct";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -33,11 +33,11 @@ export class Client {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processAddProduct(_response);
+            return this.processPostApiAddProduct(_response);
         });
     }
 
-    protected processAddProduct(response: Response): Promise<Unit> {
+    protected processPostApiAddProduct(response: Response): Promise<Unit> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 201) {
@@ -54,7 +54,7 @@ export class Client {
         return Promise.resolve<Unit>(<any>null);
     }
 
-    getProducts(): Promise<ProductDto[]> {
+    getApiGetProducts(): Promise<ProductDto[]> {
         let url_ = this.baseUrl + "/api/getProducts";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -66,11 +66,11 @@ export class Client {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processGetProducts(_response);
+            return this.processGetApiGetProducts(_response);
         });
     }
 
-    protected processGetProducts(response: Response): Promise<ProductDto[]> {
+    protected processGetApiGetProducts(response: Response): Promise<ProductDto[]> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {

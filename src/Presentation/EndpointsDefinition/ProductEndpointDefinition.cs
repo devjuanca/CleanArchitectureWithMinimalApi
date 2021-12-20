@@ -18,9 +18,8 @@ public class ProductEndpointDefinition : IEndpointDefinition
             return Results.Created(string.Empty, await sender.Send(command));
 
         })
-            .Produces<Unit>(StatusCodes.Status201Created)
-            .WithGroupName("Products")
-            .WithName("addProduct");
+            .Produces<Unit>(StatusCodes.Status201Created).WithTags("Products");
+
 
 
         app.MapGet("/api/getProducts", async (ISender sender) =>
@@ -28,9 +27,7 @@ public class ProductEndpointDefinition : IEndpointDefinition
             return await sender.Send(new ProductsQuery());
 
         })
-            .Produces<List<ProductDto>>(StatusCodes.Status200OK)
-            .WithGroupName("Products")
-            .WithName("getProducts");
+            .Produces<List<ProductDto>>(StatusCodes.Status200OK).WithTags("Products");
     }
 
     public void DefineServices(IServiceCollection services, IConfiguration configuration)
