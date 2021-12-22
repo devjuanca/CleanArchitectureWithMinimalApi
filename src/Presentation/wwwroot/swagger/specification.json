@@ -1,0 +1,98 @@
+{
+  "x-generator": "NSwag v13.15.5.0 (NJsonSchema v10.6.6.0 (Newtonsoft.Json v9.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "My Title",
+    "version": "1.0.0"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/addProduct": {
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "operationId": "PostApiAddProduct",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "AddProductCommand",
+            "in": "body",
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddProductCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Unit"
+            }
+          }
+        }
+      }
+    },
+    "/api/getProducts": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "operationId": "GetApiGetProducts",
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductDto"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Unit": {
+      "type": "object",
+      "description": "Represents a void type, since Void is not a valid return type in C#."
+    },
+    "AddProductCommand": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProductDto"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "ProductDto": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
