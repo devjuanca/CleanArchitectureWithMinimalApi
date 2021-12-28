@@ -5,9 +5,11 @@ using MediatR;
 using Application.Interfaces.ProductServices;
 using Presentation.EndpointsRegistration;
 using Application.Common.Dto;
+using Presentation.EndpointsCommon;
 
 namespace Presentation.EndpointsDefinition;
 
+using static EndpointTags;
 public class ProductEndpointDefinition : IEndpointDefinition
 {
     public void DefineEndpoints(WebApplication app)
@@ -18,7 +20,7 @@ public class ProductEndpointDefinition : IEndpointDefinition
             return Results.Created(string.Empty, await sender.Send(command));
 
         })
-            .Produces<Unit>(StatusCodes.Status201Created).WithTags("Products");
+            .Produces<Unit>(StatusCodes.Status201Created).WithTags(ProductEndpoints);
 
 
 
@@ -27,7 +29,7 @@ public class ProductEndpointDefinition : IEndpointDefinition
             return await sender.Send(new ProductsQuery());
 
         })
-            .Produces<List<ProductDto>>(StatusCodes.Status200OK).WithTags("Products");
+            .Produces<List<ProductDto>>(StatusCodes.Status200OK).WithTags(ProductEndpoints);
     }
 
     public void DefineServices(IServiceCollection services, IConfiguration configuration)

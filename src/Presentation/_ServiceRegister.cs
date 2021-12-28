@@ -5,7 +5,7 @@ using Infrastructure;
 using Infrastructure.Persistence;
 using Presentation.Services;
 namespace Presentation;
-public static class ServiceRegister
+public static class _ServiceRegister
 {
     public static void AddServices(this WebApplicationBuilder builder)
     {

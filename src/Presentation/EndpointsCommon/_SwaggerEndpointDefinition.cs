@@ -1,9 +1,6 @@
-﻿using NSwag;
-using NSwag.AspNetCore;
-using NSwag.Generation.Processors.Security;
-using Presentation.EndpointsRegistration;
+﻿using Presentation.EndpointsRegistration;
 
-namespace Presentation.EndpointsDefinition;
+namespace Presentation.EndpointsCommon;
 
 public class SwaggerEndpointDefinition : IEndpointDefinition
 {

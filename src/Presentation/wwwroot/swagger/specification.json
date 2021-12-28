@@ -12,7 +12,7 @@
     "/api/addProduct": {
       "post": {
         "tags": [
-          "Products"
+          "Products Endpoints"
         ],
         "operationId": "PostApiAddProduct",
         "consumes": [
@@ -43,7 +43,7 @@
     "/api/getProducts": {
       "get": {
         "tags": [
-          "Products"
+          "Products Endpoints"
         ],
         "operationId": "GetApiGetProducts",
         "responses": {
